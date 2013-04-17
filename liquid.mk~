@@ -16,14 +16,28 @@
 #
 
 # device
-$(call inherit-product, device/samsung/d2cri/device.mk)
+$(call inherit-product, device/samsung/d2mtr/full_d2mtr.mk)
+
+# phone
+$(call inherit-product, vendor/liquid/config/common_phone.mk)
 
 # telephony
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, vendor/liquid/config/common_cdma.mk)
 
 # product
-PRODUCT_NAME := liquid_d2cri
-PRODUCT_DEVICE := d2cri
+PRODUCT_DEVICE := d2mtr
 PRODUCT_BRAND := samsung
+PRODUCT_NAME := liquid_d2mtr
+PRODUCT_MODEL := SCH-R530M
 PRODUCT_MANUFACTURER := Samsung
-PRODUCT_MODEL := SCH-R530C
+PRODUCT_PROPERTY_OVERRIDES += ro.buildzipid=liquid.d2mtr.$(shell date +%m%d%y).$(shell date +%H%M%S)
+
+# override
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    BUILD_NUMBER=R530MVQALJ1 \
+    PRODUCT_NAME=d2mtr \
+    TARGET_DEVICE=d2mtr \
+    TARGET_BUILD_TYPE=user \
+    BUILD_VERSION_TAGS=release-keys \
+    PRIVATE_BUILD_DESC="d2mtr-user 4.0.4 IMM76D R530MVQALJ1 release-keys" \
+    BUILD_FINGERPRINT="samsung/d2mtr/d2mtr:4.0.4/IMM76D/R530MVQALJ1:user/release-keys"

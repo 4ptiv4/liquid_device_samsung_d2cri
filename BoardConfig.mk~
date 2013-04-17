@@ -16,13 +16,13 @@
 #
 
 # assert
-TARGET_OTA_ASSERT_DEVICE := d2cri
+TARGET_OTA_ASSERT_DEVICE := d2mtr
 
 # common
 -include device/samsung/d2-common/BoardConfigCommon.mk
 
 # include
--include vendor/samsung/d2cri/BoardConfigVendor.mk
+-include vendor/samsung/d2r530/BoardConfigVendor.mk
 
 # kernel
-TARGET_KERNEL_CONFIG := cyanogen_d2cri_defconfig
+TARGET_KERNEL_CONFIG := cyanogen_d2-r530_defconfig

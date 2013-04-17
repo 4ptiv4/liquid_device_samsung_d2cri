@@ -46,10 +46,11 @@
     <!-- UAProf URL -->
     <string name="uaProfUrl">http://wap.samsungmobile.com/uaprof/GT-I9100.xml</string>
 
-    <!-- cricket mms setup -->
-    <bool name="enabledTransID">true</bool>
-    <bool name="enabledNotifyWapMMSC">true</bool>
-    <string name="httpParams">x-up-calling-line-id: 1##LINE1##|X-Cricket-MDN: 1##LINE1##</string>
+    <!-- Setting for MetroPCS MMS -->
+    <string name="httpParams">x-up-calling-line-id: 1##LINE1##|X-VzW-MDN: 1##LINE1##</string>
+
+    <!-- Setting for MetroPCS MMS -->
     <string name="httpParamsLine1Key">##LINE1##</string>
 
 </mms_config>
+

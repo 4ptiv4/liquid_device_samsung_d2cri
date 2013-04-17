@@ -15,14 +15,14 @@
 # limitations under the License.
 #
 
-# assert
-TARGET_OTA_ASSERT_DEVICE := d2cri
+# overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/d2mtr/overlay
 
 # common
--include device/samsung/d2-common/BoardConfigCommon.mk
+$(call inherit-product, device/samsung/d2-common/d2-common.mk)
 
-# include
--include vendor/samsung/d2cri/BoardConfigVendor.mk
+# telephony
+DEVICE_PACKAGE_OVERLAYS += device/samsung/d2-common/overlay-cdma
 
-# kernel
-TARGET_KERNEL_CONFIG := cyanogen_d2cri_defconfig
+# vendor
+$(call inherit-product-if-exists, vendor/samsung/d2r530/d2r530-vendor.mk)

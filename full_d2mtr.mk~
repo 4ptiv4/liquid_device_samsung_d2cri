@@ -15,14 +15,15 @@
 # limitations under the License.
 #
 
-# assert
-TARGET_OTA_ASSERT_DEVICE := d2cri
+# device
+$(call inherit-product, device/samsung/d2mtr/device.mk)
 
-# common
--include device/samsung/d2-common/BoardConfigCommon.mk
+# telephony
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# include
--include vendor/samsung/d2cri/BoardConfigVendor.mk
-
-# kernel
-TARGET_KERNEL_CONFIG := cyanogen_d2cri_defconfig
+# product
+PRODUCT_NAME := liquid_d2mtr
+PRODUCT_DEVICE := d2mtr
+PRODUCT_BRAND := samsung
+PRODUCT_MANUFACTURER := Samsung
+PRODUCT_MODEL := SCH-R530M
